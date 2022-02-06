@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>my title in head</title>    
+    </head>
+    <body>
+        <div id="myId">
+            {{ myGreetingVariable }}
+        </div>
+
+        <script src="https://unpkg.com/vue@next"></script>
+        <script>
+            // create a vue instance
+            let app = Vue.createApp({
+                /* The data option for a component is a function. 
+                   Vue calls this function as part of creating a new component instance.
+                   It should return an object. */
+                data: function() {
+                    return {
+                        myGreetingVariable: 'hello world vue 3!'
+                    }
+                }
+            })
+            // let vue instance to interact with DOM element inside div
+            app.mount('#myId')
+        </script>
+    </body>    
+</html>
