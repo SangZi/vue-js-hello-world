@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 02: List Rendering</title>    
+    </head>
+    <body>
+        <style>
+            [v-cloak] {
+                display: none;
+            }
+        </style>
+        <div id="app">
+            <div v-for="user in users" :key="user.name" v-cloak>
+                <h2>{{ user.name }}</h2> has these hobbies:
+                <ul>
+                    <li v-for="hobby in user.hobbies" :key="hobby">
+                        {{ hobby }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/vue@3"></script>
+        <script>
+            Vue.createApp({
+                data() {
+                    return {
+                        users: [
+                            {name: 'Alex', hobbies: ['coding', 'movies', 'techno party', 'boardgames']},
+                            {name: 'Rolf', hobbies: ['golf', 'food', 'dancing']},
+                            {name: 'Maria', hobbies: ['coding', 'swimming', 'boardgames']}
+                        ]
+                    }
+                }
+            }).mount('#app')
+        </script>
+    </body>    
+</html>

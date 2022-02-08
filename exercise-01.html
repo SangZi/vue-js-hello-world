@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Greeting</title>    
+        <title>Exercise 01: Conditional Rendering</title>    
     </head>
     <body>
         <div id="app">
             <p v-if="sunny"> It's sunny today!</p>
             <p v-else-if="cloudy"> It's cloudy today!</p>
             <p v-else> It's raining today!</p>
+            <br>
+            <br>
+            <br>
 
-            <label>Please enter animal:</label>
+            <label>Please enter a kind of animal:</label>
+            <br>
             <input v-model="animal" />
             <p v-if="animal === 'dog'">Dog goes woof!</p>
             <p v-else-if="animal === 'cat'">Cat goes meow!</p>
             <p v-else>What does the {{animal}} say?</p>
-            <br>            
+            <br>
+            <br>  
+            <br>          
             
             Hi {{ name }}
-            <br>
             <br>
             <label>Please enter your name:</label>
             <br>
