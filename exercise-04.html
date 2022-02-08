@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 04: Computed</title>    
+    </head>
+    <body>
+        <div id="app">
+            <p>Shopping Cart Total is: {{ shoppingCartTotal }}</p>
+        </div>
+
+        <script src="https://unpkg.com/vue@3"></script>
+        <script>
+            Vue.createApp({
+                data() {
+                    return {
+                        cart: [
+                            {name: 'Hat', quantity:1, price: 40},
+                            {name: 'Sock', quantity:2, price: 20},
+                            {name: 'Dress', quantity:3, price: 99},
+                        ]
+                    }
+                },
+                /* Difference between methods and computed: 
+                   computed do not accept argument, and do not change data, always return value;
+                   methods accept argument, are able to change data, not require to return value
+                */
+                computed: {
+                    shoppingCartTotal () {
+                        return this.cart.map(item => item.price * item.quantity)
+                            .reduce((total, amount) => total + amount)
+                    }
+                }
+            }).mount('#app')
+        </script>
+    </body>    
+</html>
